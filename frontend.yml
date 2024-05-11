@@ -7,3 +7,25 @@
       ansible.builtin.dnf:
         name: nginx
         state: present
+
+    - name: Remove Old HTML Directory
+      ansible.builtin.copy:
+        src: expense.conf
+        dest: /etc/nginx/default.d/expense.conf
+
+    - name: Create HTML directory
+      ansible.builtin.file:
+        path: /usr/share/nginx/html/
+        state: directory
+
+    - name: Download and Extract Frontend Content
+      ansible.builtin.unarchive:
+        src: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
+        dest: /usr/share/nginx/html
+        remote_src: true
+
+    - name: Restart the Nginx service
+      ansible.builtin.systemd_service:
+        state: restarted
+        name: nginx
+        enabled: true
