@@ -1,5 +1,6 @@
 - name: Mysql Play Book
   hosts: all
+  become: true
   tasks:
     - name: Set Prompt
       ansible.builtin.shell: set-prompt mysql
