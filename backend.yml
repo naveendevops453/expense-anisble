@@ -45,10 +45,14 @@
       community.general.npm:
         path: /app/
 
-    - name: Install mysql client"
+    - name: Install mysql client and MySQL python"
       ansible.builtin.dnf:
-        name: mysql
+        name:
+        - mysql
+        - Python3-PyMySQL
         state: present
+
+
 
     - name: Load Schema
       community.mysql.mysql_db:
