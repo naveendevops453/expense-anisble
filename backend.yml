@@ -49,10 +49,8 @@
       ansible.builtin.dnf:
         name:
         - mysql
-        - Python3-PyMySQL
+        - python3-PyMySQL
         state: present
-
-
 
     - name: Load Schema
       community.mysql.mysql_db:
