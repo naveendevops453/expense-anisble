@@ -14,7 +14,7 @@
     - name: Install NodeJS
       ansible.builtin.dnf:
         name: nodejs
-        status: present
+        state: present
 
     - name: Add Expense User
       ansible.builtin.user:
