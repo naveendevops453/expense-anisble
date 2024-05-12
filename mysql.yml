@@ -10,10 +10,10 @@
         name: mysql-server
         state: present
 
-    - name: enable and restart the Nginx service
+    - name: enable and restart the Mysql service
       ansible.builtin.systemd_service:
         state: restarted
-        name: nginx
+        name: mysqld
         enabled: true
 
     - name: Set root Password
