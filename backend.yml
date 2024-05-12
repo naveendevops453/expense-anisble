@@ -16,15 +16,14 @@
         name: nodejs
         state: present
 
-
     - name: Add Expense User
       ansible.builtin.user:
         name: expense
 
-    - name: copy Backend service file
+    - name: Copy Backend Service file
       ansible.builtin.copy:
         src: backend.service
-        dst: /etc/systemd/system/backend.service
+        dest: /etc/systemd/system/backend.service
 
     - name: Deleting existing Application directory
       ansible.builtin.file:
