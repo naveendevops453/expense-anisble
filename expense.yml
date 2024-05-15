@@ -1,6 +1,6 @@
-- name: Frontend Playbook
+- name: Expense Project Playbook
   hosts: all
   become: true
   #become_method: sudo #optional
   roles:
-    - frontend
+    - "{{ role_name }}"
