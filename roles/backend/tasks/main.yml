@@ -17,7 +17,7 @@
     name: expense
 
 - name: Copy Backend Service file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
@@ -55,7 +55,7 @@
     target: /app/schema/backend.sql
     login_user: root
     login_password: ExpenseApp@1
-    login_host: mysql-dev.devopsengineer.online
+    login_host: mysql-{{env}}.devopsengineer.online
 
 - name: Start backend service
   ansible.builtin.systemd_service:
