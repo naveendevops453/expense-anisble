@@ -1,0 +1,1 @@
+ansible-playbook -i ${component}-${env}.devopsengineer.online, -e ansible_user=ec2-user -e ansbile_password=${SSH_PASSWORD} -e role_name=${component} -e env=dev expense.yml
