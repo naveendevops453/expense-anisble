@@ -1,4 +1,5 @@
 ## For template pipeline we will skip the ansible run
+component=$1
 if [ "$pipeline" == "true" ]; then
   exit
 fi
