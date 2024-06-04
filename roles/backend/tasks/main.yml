@@ -39,10 +39,10 @@
     state: import
     name: all
     target: /app/schema/backend.sql
-    login_user: "{{ secrets.MYSQL_USER }}"
-    login_password: "{{ secrets.MYSQL_PASS }}"
-#    login_user: root
-#    login_password: ExpenseApp@1
+#    login_user: "{{ secrets.MYSQL_USER }}"
+#    login_password: "{{ secrets.MYSQL_PASS }}"
+    login_user: root
+    login_password: ExpenseApp@1
     login_host: mysql-{{env}}.devopsengineer2.online
 
 - name: Start backend service
